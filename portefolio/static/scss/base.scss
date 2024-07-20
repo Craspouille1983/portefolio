@@ -1,0 +1,10 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-family: "Baloo 2", sans-serif;
+  }
+}
