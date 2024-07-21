@@ -78,14 +78,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    },
-    'users': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'folio',
-        'USER': 'root',
-        'PASSWORD': 'Q12345-è_',
-        'HOST': 'localhost',
-        'PORT': '8000',
     }
 }
 

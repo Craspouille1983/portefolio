@@ -1,0 +1,80 @@
+[
+  {
+    "skill": "HTML5",
+    "level": "5",
+    "experience": "5",
+    "logo-skill": "https://www.w3.org/html/logo/badge/html5-badge-h-solo.png"
+  },
+  {
+    "skill": "CSS & SCSS",
+    "level": "5",
+    "experience": "5",
+    "logo-skill": "assets/logos/CSS3_logo.svg"
+  },
+  {
+    "skill": "JavaSCript",
+    "level": "4.5",
+    "experience": "5",
+    "logo-skill": "assets/logos/JavaScript-logo.png"
+  },
+  {
+    "skill": "VueJS",
+    "level": "4",
+    "experience": "5",
+    "logo-skill": "assets/logos/VueJS-logo.svg"
+  },
+  {
+    "skill": "ReactJS",
+    "level": "3",
+    "experience": "1. 5",
+    "logo-skill": "assets/logos/ReactJS-logo.svg"
+  },
+  {
+    "skill": "Bootstrap",
+    "level": "4.5",
+    "experience": "5",
+    "logo-skill": "assets/logos/bootstrap-logo.svg"
+  },
+  {
+    "skill": "Wordpress",
+    "level": "4.5",
+    "experience": "3",
+    "logo-skill": "assets/logos/wordpress-logo.svg"
+  },
+  {
+    "skill": "GitLab",
+    "level": "4.5",
+    "experience": "5",
+    "logo-skill": "assets/logos/gitlab.svg"
+  },
+  {
+    "skill": "GitHub",
+    "level": "4.5",
+    "experience": "-1",
+    "logo-skill": "assets/logos/github-mark-white.svg"
+  },
+  {
+    "skill": "Photoshop",
+    "level": "4.5",
+    "experience": "-1",
+    "logo-skill": "assets/logos/photoshop-logo.svg"
+  },
+  {
+    "skill": "Affinity Design",
+    "level": "4.5",
+    "experience": "-1",
+    "logo-skill": "assets/logos/affinity-design-logo.svg"
+  },
+  {
+    "skill": "Affinity Photo",
+    "level": "4.5",
+    "experience": "-1",
+    "logo-skill": "assets/logos/affinity-photo-logo.svg"
+  },
+  {
+    "skill": "Gimp",
+    "level": "4.5",
+    "experience": "8",
+    "logo-skill": "assets/logos/gimp-logo.svg"
+  }
+]
