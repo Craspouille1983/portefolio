@@ -24,3 +24,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', folio.views.index, name='index'),
 ] + static(settings.STATIC_URL, document_root=settings.MEDIA_ROOT)
+

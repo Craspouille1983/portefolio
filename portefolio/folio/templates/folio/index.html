@@ -78,6 +78,17 @@
         {% endfor %}
       </div>        
     </section>
+    <hr />
+    <section>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Envoyer</button>
+      </form>
+      {% if success_message %}
+        <div class="alert alert-success">{{ success_message }}</div>
+      {% endif %}
+  </section>
   </main>
   <footer id="contact">
     {% for contact in contacts %}

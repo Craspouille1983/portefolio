@@ -49,8 +49,6 @@
       elements.forEach((el) => {
         const rect = el.getBoundingClientRect();
         const viewport = window.innerHeight;
-        console.log(elements[0].offsetTop, window.scrollY)
-        console.log(window.scrollY === 0)
         if (window.scrollY === 0) {
           menu[0].classList.add('current')
         }
