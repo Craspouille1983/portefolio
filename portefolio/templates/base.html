@@ -4,20 +4,66 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon-->
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'assets/habillage/favicon.png' %}"
+    />
     <!-- Custom-->
-    <link rel="stylesheet" type="text/css" href="{% STATIC 'css/base.min.css'%}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/base.min.css'%}"
+    />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet" />
-    <title>M. Frédéric Séjournant</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frédéric</title>
   </head>
   <body>
-    <header>
-      <h1></h1>
-    </hearder>
     {% block content %}{% endblock content %}
-      
+
     <!-- Contenu de la page -->
   </body>
+  <script>
+    /*    menu.forEach(m => {
+          m.addEventListener('click', function() {
+            for (let current = 0; current < menu.length; current++) {
+              if (menu[current].classList.contains('current')) menu[current].classList.remove('current')
+            }
+            m.classList.add('current');
+          })
+        })*/
+    let menu = document.querySelectorAll("nav ul li a");
+    let elements = document.querySelectorAll("[id]");
+    window.addEventListener("scroll", function () {
+      elements.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        const viewport = window.innerHeight;
+        console.log(elements[0].offsetTop, window.scrollY)
+        console.log(window.scrollY === 0)
+        if (window.scrollY === 0) {
+          menu[0].classList.add('current')
+        }
+        else if (rect.top - (viewport/2) < 0) {
+          menu.forEach((m) => {
+            if (m.href.includes(`#${el.id}`)) {
+              m.parentElement.classList.add("current");
+            } else {
+              m.parentElement.classList.remove("current");
+            }
+          });
+        }
+      });
+    });
+  </script>
 </html>

@@ -1,0 +1,92 @@
+{% extends "base.html" %}{% load static %}
+{% block content %}
+  <header>
+    <nav>
+      <ul>
+        <li class="current"><a href="#about"></a></li>
+        <li><a href="#skills"></a></li>
+        <li><a href="#projects"></a></li>
+      </ul>
+    <nav>
+  </header>
+  
+  <main>
+    <section class="about" id="about">
+      <div class="about-me">
+        <div>
+          <div>
+            <h1>Bonjour,</h1>
+            <p>Je m'appelle Frédéric, je suis curieux, autonome,
+              créatif, j'aime la diversité des
+              tâches et le travail en équipe.</p>
+          </div>
+          <h2>Quelques mots sur moi</h2>
+          <p>
+            Je suis développeur frontend en quête de devenir fullstack. J'ai débuté dans le développement web en 2019 après une formation 
+            de 6 mois en HTML5, CSS et JavaScript. J'ai ensuite approfondi mes compétences au sein de cette même agence, 
+            où j'ai pu expérimenter différents frameworks. Ce métier, en constante évolution, me passionne car il exige une 
+            veille technologique permanente. J'apprécie particulièrement cet aspect dynamique qui me pousse à apprendre 
+            sans cesse pour progresser.
+          </p>
+        </div>
+        <figure>
+          <img src="{% static 'assets/habillage/M6_.png' %}" alt="Photo Frédéric" />
+        </figure>
+      </div>
+    </section>
+    <hr />
+    <section class="skills" id="skills">
+      <h2>Compétences</h2>
+      <div class="skills-container">
+        {% for skill in skills %}
+          <div class="skill">
+            <div class="skill-bottom">
+              {% if skill.experience > 1 %}
+              <figure title="{{ skill.skill}} - {{skill.experience }} ans d'expérience">
+                <img src="{% static skill.logo_skill %}" alt="{{ skill.skill}} - {{skill.experience }} d'expérience" />
+              </figure>
+              {% else %}
+              <figure title="{{ skill.skill}} - {{skill.experience }} an d'expérience">
+                <img src="{% static skill.logo_skill %}" alt="{{ skill.skill}} - {{skill.experience }} d'expérience" />
+              </figure>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+    <hr />
+    <section class="projects" id="projects">
+      <h2>Quelques uns de mes projets</h2>
+      <div class="projects-container">
+        {% for projet  in projets %}
+          <div class="project">
+            <a href="{{ projet.link }}">
+              <div class="project-header">
+                <figure><img src="{% static projet.logo %}" alt="logo {{ projet.project }}"></figure>
+              </div>
+            </a>
+            <div class="project-bottom">
+              <span>{{ projet.language }}</span>
+              
+              {% if projet.framework  %}
+                - <span>{{ projet.framework }}</span>
+              {% endif %}
+                
+            </div>
+          </div>
+        {% endfor %}
+      </div>        
+    </section>
+  </main>
+  <footer id="contact">
+    {% for contact in contacts %}
+        <a href="{{ contact.link }}">
+          <figure>
+            <img src="{% static contact.icon %}" alt="{{ contact.text }}" />
+          </figure>
+        </a> 
+    {% endfor %}
+  </footer>
+{% endblock content %}
+  
