@@ -188,6 +188,16 @@
   {
     "model": "folio.Project",
     "fields": {
+      "project": "FetaBD",
+      "link": "https://fetabd.codephenix.fr",
+      "language": "HTML5 Sass Javascript Python",
+      "framework": "Django",
+      "logo": "assets/logos_projets/logo-fetaBD.svg"
+    }
+  },
+  {
+    "model": "folio.Project",
+    "fields": {
       "project": "Pixelcan",
       "link": "https://pixelcan.fr/",
       "language": "HTML5 Sass Javascript",
