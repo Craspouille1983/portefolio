@@ -22,10 +22,14 @@ body {
   row-gap: 3rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  img {
-    mask-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 1) 85%);
+
+  figure {
+    img {
+      width: 100%;
+      mask-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 1) 85%);
+    }
   }
-  
+
   @media screen and (min-width: 992px) {
     padding-left: 10rem;
     padding-right: 10rem;
@@ -37,7 +41,8 @@ body {
   header {
     position: fixed;
     top: calc(100vh / 2);
-    right: 3em;
+    right: 3vw;
+
     nav {
       ul {
         list-style: none;
@@ -52,11 +57,12 @@ body {
           border-radius: 50%;
           clip-path: circle();
         }
-        
+
         a {
           display: inline-block;
           width: 10px;
           height: 10px;
+
           &:visited {
             color: unset;
           }
@@ -158,6 +164,57 @@ body {
         }
       }
 
+    }
+  }
+
+  #contact {
+    display: flex;
+    justify-content: space-around;
+
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      form {
+        p {
+          display: flex;
+          flex-direction: column;
+          row-gap: .25em;
+
+          input,
+          textarea {
+            border: none;
+            border-left: 2px deeppink solid;
+            border-bottom: 2px deeppink solid;
+          }
+        }
+      }
+
+      h2 {
+        align-self: flex-end;
+        padding-top: 1rem;
+        position: relative;
+        width: fit-content;
+        height: 150px;
+        color: #111;
+        margin-bottom: 2em;
+        &::before {
+          content: "";
+          width: 125%;
+          height: 100%;
+          /* border-radius: 50%; */
+          background-image: url(../assets/habillage/bulle.svg);
+          /* border: 3px solid #666; */
+          position: absolute;
+          top: 0;
+          left: -20px;
+          z-index: -1;
+          background-repeat: no-repeat;
+          background-position-x: center;
+          background-position-y: top;
+          background-size: contain; 
+        }
+      }
     }
   }
 

@@ -6,6 +6,7 @@
         <li class="current"><a href="#about"></a></li>
         <li><a href="#skills"></a></li>
         <li><a href="#projects"></a></li>
+        <li><a href="#contact"></a></li>
       </ul>
     <nav>
   </header>
@@ -67,10 +68,10 @@
               </div>
             </a>
             <div class="project-bottom">
-              <span>{{ projet.language }}</span>
+              <p>{{ projet.language }}</p>
               
               {% if projet.framework  %}
-                - <span>{{ projet.framework }}</span>
+                <p>{{ projet.framework }}</p>
               {% endif %}
                 
             </div>
@@ -79,18 +80,24 @@
       </div>        
     </section>
     <hr />
-    <section>
-      <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Envoyer</button>
-      </form>
-      {% if success_message %}
-        <div class="alert alert-success">{{ success_message }}</div>
-      {% endif %}
+    <section id="contact">
+      <div>
+        <h2>Contactez-moi</h2>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Envoyer</button>
+        </form>
+        {% if success_message %}
+          <div class="alert alert-success">{{ success_message }}</div>
+        {% endif %}
+      </div>
+      <figure>
+        <img src="{% static 'assets/habillage/crasp_.png' %}" alt="Dessin enfant super-héros">
+      </figure>
   </section>
   </main>
-  <footer id="contact">
+  <footer>
     {% for contact in contacts %}
         <a href="{{ contact.link }}">
           <figure>

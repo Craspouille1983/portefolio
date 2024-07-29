@@ -35,16 +35,9 @@
     <!-- Contenu de la page -->
   </body>
   <script>
-    /*    menu.forEach(m => {
-          m.addEventListener('click', function() {
-            for (let current = 0; current < menu.length; current++) {
-              if (menu[current].classList.contains('current')) menu[current].classList.remove('current')
-            }
-            m.classList.add('current');
-          })
-        })*/
     let menu = document.querySelectorAll("nav ul li a");
-    let elements = document.querySelectorAll("[id]");
+    let elements = document.querySelectorAll("section[id]");
+    console.log(elements)
     window.addEventListener("scroll", function () {
       elements.forEach((el) => {
         const rect = el.getBoundingClientRect();
