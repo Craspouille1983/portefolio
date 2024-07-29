@@ -3,18 +3,11 @@ from django.core.mail import send_mail
 from folio import models
 from folio import forms
 
+
 def index(request):
     contacts = models.Contact.objects.all()
     skills = models.Skill.objects.all()
     projet = models.Project.objects.all()
-    return render(
-        request,
-        "folio/index.html",
-        context={"skills": skills, "contacts": contacts, "projets": projet},
-    )
-
-
-def contact(request):
     form = forms.ContactForm()
     if request.method == "POST":
         form = forms.ContactForm(request.POST)
@@ -25,8 +18,14 @@ def contact(request):
             subject = form.cleaned_data["subject"]
             message = form.cleaned_data["message"]
             sender = form.cleaned_data["email"]
-            recipient = "frederic.sejournant@outlook.fr"
-            send_mail(subject, message, sender, [recipient])
+            recipient = "fredericsejournant7@gmail.com"
+            send_mail(
+                subject,
+                message,
+                sender,
+                [recipient],
+                fail_silently=False,
+            )
             return render(
                 request,
                 "folio/index.html",
@@ -37,5 +36,18 @@ def contact(request):
             )
     else:
         form = forms.ContactForm()
-    return render(request, "folio/index.html", context={"form": form})
 
+    return render(
+        request,
+        "folio/index.html",
+        context={
+            "skills": skills,
+            "contacts": contacts,
+            "projets": projet,
+            "form": form,
+        },
+    )
+
+
+# def contact(request):
+#     return render(request, "folio/index.html", context={"form": form})
