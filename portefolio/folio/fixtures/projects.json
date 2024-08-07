@@ -1,0 +1,65 @@
+[
+  {
+    "model": "folio.Project",
+    "fields": {
+      "project": "FetaBD",
+      "link": "https://fetabd.codephenix.fr",
+      "language": [1, 3, 4, 8, 9],
+      "logo": "assets/logos_projets/logo-fetaBD.svg"
+    }
+  },
+  {
+    "model": "folio.Project",
+    "fields": {
+      "project": "Pixelcan",
+      "link": "https://pixelcan.fr/",
+      "language": [1, 3, 4],
+      "logo": "assets/logos_projets/logo_pixelcan.svg"
+    }
+  },
+  {
+    "model": "folio.Project",
+    "fields": {
+      "project": "La cravate solidaire",
+      "link": "https://lacravatesolidaire.org/",
+      "language": [1, 3, 5, 10],
+      "logo": "assets/logos_projets/LOGO-LCS (COULEUR)@2x.png"
+    }
+  },
+  {
+    "model": "folio.Project",
+    "fields": {
+      "project": "Éve Mage",
+      "link": "https://www.eve-mage.org/",
+      "language": [1, 3, 5, 10],
+      "logo": "assets/logos_projets/logo_mage_bg-blue.svg"
+    }
+  },
+  {
+    "model": "folio.Project",
+    "fields": {
+      "project": "Noam",
+      "link": "https://www.noam-be.com/",
+      "language": [1, 2, 4],
+      "logo": "assets/logos_projets/logo-noam.svg"
+    }
+  },
+  {
+    "model": "folio.Project",
+    "fields": {
+      "project": "Atigip",
+      "link": "https://www.atigip-justice.fr/",
+      "language": [1, 2, 4, 5, 7],
+      "logo": "assets/logos_projets/logo_ATIGIP.png"
+    }
+  },
+  {
+    "model": "folio.Project",
+    "fields": {
+      "project": "VictorIa",
+      "link": "https://www.atigip-justice.fr/",
+      "language": [1, 4, 5],
+      "logo": "assets/logos_projets/victoria.svg"
+    }
+  }
+]

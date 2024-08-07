@@ -7,7 +7,12 @@ from folio import forms
 def index(request):
     contacts = models.Contact.objects.all()
     skills = models.Skill.objects.all()
-    projet = models.Project.objects.all()
+    projects = models.Project.objects.all()
+    SKILL_CHOICES = dict(models.SKILL_CHOICES)
+    for skill in skills:
+        skill.skill_id = SKILL_CHOICES[int(skill.skill)]
+    for project in projects:
+        project.skills_list = [SKILL_CHOICES[int(skill.skill)] for skill in project.language.all()]
     form = forms.ContactForm()
     if request.method == "POST":
         form = forms.ContactForm(request.POST)
@@ -43,11 +48,9 @@ def index(request):
         context={
             "skills": skills,
             "contacts": contacts,
-            "projets": projet,
+            "projets": projects,
+            "SKILL_CHOICES": SKILL_CHOICES,
             "form": form,
         },
     )
 
-
-# def contact(request):
-#     return render(request, "folio/index.html", context={"form": form})

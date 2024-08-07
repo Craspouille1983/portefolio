@@ -43,11 +43,11 @@
           <div class="skill">
             <div class="skill-bottom">
               {% if skill.experience > 1 %}
-              <figure title="{{ skill.skill}} - {{skill.experience }} ans d'expérience">
+              <figure title="{{ skill.skill_id }} - {{skill.experience }} ans d'expérience">
                 <img src="{% static skill.logo_skill %}" alt="{{ skill.skill}} - {{skill.experience }} d'expérience" />
               </figure>
               {% else %}
-              <figure title="{{ skill.skill}} - {{skill.experience }} an d'expérience">
+              <figure title="{{ skill.skill_id }} - {{skill.experience }} an d'expérience">
                 <img src="{% static skill.logo_skill %}" alt="{{ skill.skill}} - {{skill.experience }} d'expérience" />
               </figure>
               {% endif %}
@@ -67,12 +67,10 @@
                 <figure><img src="{% static projet.logo %}" alt="logo {{ projet.project }}"></figure>
               </div>
             </a>
-            <div class="project-bottom">
-              <p>{{ projet.language }}</p>
-              
-              {% if projet.framework  %}
-                <p>{{ projet.framework }}</p>
-              {% endif %}
+            <div class="project-bottom">          
+                {% for skill in projet.skills_list %}
+                <span>{{ skill }} </span>
+              {% endfor %}
                 
             </div>
           </div>
