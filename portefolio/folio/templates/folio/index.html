@@ -80,17 +80,17 @@
     <hr />
     <section id="contact">
       <div>
-        <h2>Contactez-moi</h2>
         <form method="post">
           {% csrf_token %}
           {{ form.as_p }}
           <button type="submit">Envoyer</button>
         </form>
         {% if success_message %}
-          <div class="alert alert-success">{{ success_message }}</div>
+        <div class="alert alert-success">{{ success_message }}</div>
         {% endif %}
       </div>
       <figure>
+        <h2>Contactez-moi</h2>
         <img src="{% static 'assets/habillage/crasp_.png' %}" alt="Dessin enfant super-héros">
       </figure>
   </section>
