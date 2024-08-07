@@ -1,32 +1,9 @@
 [
   {
-    "model": "folio.Contact",
-    "fields": {
-      "text": "mail",
-      "link": "mailto:frederic.sejournant@outlook.fr",
-      "icon": "assets/logos/email-envelope.svg"
-    }
-  },
-  {
-    "model": "folio.Contact",
-    "fields": {
-      "text": "Github",
-      "link": "https://github.com/Craspouille1983",
-      "icon": "assets/logos/github-mark-white.svg"
-    }
-  },
-  {
-    "model": "folio.Contact",
-    "fields": {
-      "text": "LinkedIn",
-      "link": "https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-s%C3%A9journant-8a54762b5/",
-      "icon": "assets/logos/LI-In-Bug.png"
-    }
-  },
-  {
     "model": "folio.Skill",
     "fields": {
-      "skill": "HTML5",
+      "skill": 1,
+      "type": "language",
       "level": 100,
       "experience": 5,
       "logo_skill": "assets/logos/HTML5_Badge.svg"
@@ -35,7 +12,8 @@
   {
     "model": "folio.Skill",
     "fields": {
-      "skill": "CSS",
+      "skill": 2,
+      "type": "language",
       "level": 100,
       "experience": 5,
       "logo_skill": "assets/logos/CSS3_logo.svg"
@@ -44,7 +22,8 @@
   {
     "model": "folio.Skill",
     "fields": {
-      "skill": "SCSS",
+      "skill": 3,
+      "type": "language",
       "level": 100,
       "experience": 5,
       "logo_skill": "assets/logos/Sass_Logo_Color.svg"
@@ -53,7 +32,8 @@
   {
     "model": "folio.Skill",
     "fields": {
-      "skill": "JavaScript",
+      "skill": 4,
+      "type": "language",
       "level": 95,
       "experience": 5,
       "logo_skill": "assets/logos/JavaScript-logo.png"
@@ -62,7 +42,8 @@
   {
     "model": "folio.Skill",
     "fields": {
-      "skill": "VueJS",
+      "skill": 10,
+      "type": "language",
       "level": 80,
       "experience": 5,
       "logo_skill": "assets/logos/VueJS-logo.svg"
@@ -71,7 +52,8 @@
   {
     "model": "folio.Skill",
     "fields": {
-      "skill": "ReactJS",
+      "skill": 11,
+      "type": "language",
       "level": 65,
       "experience": 1.5,
       "logo_skill": "assets/logos/ReactJS-logo.svg"
@@ -80,7 +62,8 @@
   {
     "model": "folio.Skill",
     "fields": {
-      "skill": "Python Django",
+      "skill": 8,
+      "type": "language",
       "level": 40,
       "experience": 1,
       "logo_skill": "assets/logos/python-logo.png"
@@ -89,7 +72,18 @@
   {
     "model": "folio.Skill",
     "fields": {
-      "skill": "Bootstrap",
+      "skill": 9,
+      "type": "language",
+      "level": 40,
+      "experience": 1,
+      "logo_skill": "assets/logos/django-logo-negative.svg"
+    }
+  },
+  {
+    "model": "folio.Skill",
+    "fields": {
+      "skill": 5,
+      "type": "language",
       "level": 90,
       "experience": 5,
       "logo_skill": "assets/logos/bootstrap-logo.svg"
@@ -98,7 +92,8 @@
   {
     "model": "folio.Skill",
     "fields": {
-      "skill": "Tailwind",
+      "skill": 6,
+      "type": "language",
       "level": 80,
       "experience": 1.5,
       "logo_skill": "assets/logos/tailwind-logo.svg"
@@ -107,7 +102,8 @@
   {
     "model": "folio.Skill",
     "fields": {
-      "skill": "Wordpress",
+      "skill": 12,
+      "type": "language",
       "level": 90,
       "experience": 3,
       "logo_skill": "assets/logos/wordpress-logo.svg"
@@ -116,7 +112,8 @@
   {
     "model": "folio.Skill",
     "fields": {
-      "skill": "GitLab",
+      "skill": 13,
+      "type": "logiciel",
       "level": 90,
       "experience": 5,
       "logo_skill": "assets/logos/gitlab.svg"
@@ -125,7 +122,8 @@
   {
     "model": "folio.Skill",
     "fields": {
-      "skill": "GitHub",
+      "skill": 14,
+      "type": "logiciel",
       "level": 85,
       "experience": 1,
       "logo_skill": "assets/logos/github-mark-white.svg"
@@ -134,7 +132,8 @@
   {
     "model": "folio.Skill",
     "fields": {
-      "skill": "Photoshop",
+      "skill": 15,
+      "type": "logiciel",
       "level": 90,
       "experience": 2,
       "logo_skill": "assets/logos/photoshop-logo.svg"
@@ -143,7 +142,8 @@
   {
     "model": "folio.Skill",
     "fields": {
-      "skill": "Affinity Design",
+      "skill": 16,
+      "type": "logiciel",
       "level": 90,
       "experience": 1,
       "logo_skill": "assets/logos/affinity-design-logo.svg"
@@ -152,7 +152,8 @@
   {
     "model": "folio.Skill",
     "fields": {
-      "skill": "Affinity Photo",
+      "skill": 17,
+      "type": "logiciel",
       "level": 90,
       "experience": 1,
       "logo_skill": "assets/logos/affinity-photo-logo.svg"
@@ -161,7 +162,8 @@
   {
     "model": "folio.Skill",
     "fields": {
-      "skill": "Gimp",
+      "skill": 18,
+      "type": "logiciel",
       "level": 95,
       "experience": 8,
       "logo_skill": "assets/logos/gimp-logo.svg"
@@ -170,7 +172,8 @@
   {
     "model": "folio.Skill",
     "fields": {
-      "skill": "Figma",
+      "skill": 19,
+      "type": "logiciel",
       "level": 90,
       "experience": 1,
       "logo_skill": "assets/logos/logo-figma.svg"
@@ -179,80 +182,11 @@
   {
     "model": "folio.Skill",
     "fields": {
-      "skill": "Adobe XD",
+      "skill": 20,
+      "type": "logiciel",
       "level": 90,
       "experience": 1,
       "logo_skill": "assets/logos/Adobe_XD_CC_icon.svg"
-    }
-  },
-  {
-    "model": "folio.Project",
-    "fields": {
-      "project": "FetaBD",
-      "link": "https://fetabd.codephenix.fr",
-      "language": "HTML5 Sass Javascript Python",
-      "framework": "Django",
-      "logo": "assets/logos_projets/logo-fetaBD.svg"
-    }
-  },
-  {
-    "model": "folio.Project",
-    "fields": {
-      "project": "Pixelcan",
-      "link": "https://pixelcan.fr/",
-      "language": "HTML5 Sass Javascript",
-      "framework": "",
-      "logo": "assets/logos_projets/logo_pixelcan.svg"
-    }
-  },
-  {
-    "model": "folio.Project",
-    "fields": {
-      "project": "La cravate solidaire",
-      "link": "https://lacravatesolidaire.org/",
-      "language": "HTML5 Sass",
-      "framework": "Bootstrap VueJS",
-      "logo": "assets/logos_projets/LOGO-LCS (COULEUR)@2x.png"
-    }
-  },
-  {
-    "model": "folio.Project",
-    "fields": {
-      "project": "Éve Mage",
-      "link": "https://www.eve-mage.org/",
-      "language": "HTML5 Sass",
-      "framework": "Bootstrap VueJS",
-      "logo": "assets/logos_projets/logo_mage_bg-blue.svg"
-    }
-  },
-  {
-    "model": "folio.Project",
-    "fields": {
-      "project": "Noam",
-      "link": "https://www.noam-be.com/",
-      "language": "HTML5 CSS Wordpress",
-      "framework": "",
-      "logo": "assets/logos_projets/logo-noam.svg"
-    }
-  },
-  {
-    "model": "folio.Project",
-    "fields": {
-      "project": "Atigip",
-      "link": "https://www.atigip-justice.fr/",
-      "language": "HTML5 CSS JavaScript",
-      "framework": "Bootstrap Jquery",
-      "logo": "assets/logos_projets/logo_ATIGIP.png"
-    }
-  },
-  {
-    "model": "folio.Project",
-    "fields": {
-      "project": "VictorIa",
-      "link": "https://www.atigip-justice.fr/",
-      "language": "HTML5 Sass",
-      "framework": "ReactJS",
-      "logo": "assets/logos_projets/victoria.svg"
     }
   }
 ]
