@@ -12,7 +12,7 @@ def index(request):
     for skill in skills:
         skill.skill_id = SKILL_CHOICES[int(skill.skill)]
     for project in projects:
-        project.skills_list = [SKILL_CHOICES[int(skill.skill)] for skill in project.language.all()]
+        project.skills_list = [SKILL_CHOICES.get(skill.id) for skill in project.language.all()]
     form = forms.ContactForm()
     if request.method == "POST":
         form = forms.ContactForm(request.POST)

@@ -39,21 +39,45 @@
     <section class="skills" id="skills">
       <h2>Compétences</h2>
       <div class="skills-container">
-        {% for skill in skills %}
-          <div class="skill">
-            <div class="skill-bottom">
-              {% if skill.experience > 1 %}
-              <figure title="{{ skill.skill_id }} - {{skill.experience }} ans d'expérience">
-                <img src="{% static skill.logo_skill %}" alt="{{ skill.skill}} - {{skill.experience }} d'expérience" />
-              </figure>
-              {% else %}
-              <figure title="{{ skill.skill_id }} - {{skill.experience }} an d'expérience">
-                <img src="{% static skill.logo_skill %}" alt="{{ skill.skill}} - {{skill.experience }} d'expérience" />
-              </figure>
-              {% endif %}
-            </div>
-          </div>
-        {% endfor %}
+        <div data-type="language">
+          {% for skill in skills %}
+            {% if skill.type == 'language' %} 
+              <div class="skill">
+                <div class="skill-bottom">
+                  {% if skill.experience > 1 %}
+                    <figure title="{{ skill.skill_id }} - {{skill.experience }} ans d'expérience">
+                      <img src="{% static skill.logo_skill %}" alt="{{ skill.skill}} - {{skill.experience }} d'expérience" />
+                    </figure>
+                  {% else %}
+                    <figure title="{{ skill.skill_id }} - {{skill.experience }} an d'expérience">
+                      <img src="{% static skill.logo_skill %}" alt="{{ skill.skill}} - {{skill.experience }} d'expérience" />
+                    </figure>
+                  {% endif %}                    
+                </div> 
+              </div>
+            {% endif%}
+          {% endfor %}
+        </div>
+        <hr style="max-width: 50vw; margin: 3em auto;" />
+        <div data-type="logiciel">
+          {% for skill in skills %}
+            {% if skill.type == 'logiciel' %} 
+              <div class="skill">
+                <div class="skill-bottom">
+                  {% if skill.experience > 1 %}
+                    <figure title="{{ skill.skill_id }} - {{skill.experience }} ans d'expérience">
+                      <img src="{% static skill.logo_skill %}" alt="{{ skill.skill}} - {{skill.experience }} d'expérience" />
+                    </figure>
+                  {% else %}
+                    <figure title="{{ skill.skill_id }} - {{skill.experience }} an d'expérience">
+                      <img src="{% static skill.logo_skill %}" alt="{{ skill.skill}} - {{skill.experience }} d'expérience" />
+                    </figure>
+                  {% endif %}                    
+                </div> 
+              </div>
+            {% endif%}
+          {% endfor %}
+        </div>
       </div>
     </section>
     <hr />

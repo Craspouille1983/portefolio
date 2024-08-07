@@ -72,6 +72,16 @@
   {
     "model": "folio.Skill",
     "fields": {
+      "skill": 9,
+      "type": "language",
+      "level": 40,
+      "experience": 1,
+      "logo_skill": "assets/logos/django-logo-negative.svg"
+    }
+  },
+  {
+    "model": "folio.Skill",
+    "fields": {
       "skill": 5,
       "type": "language",
       "level": 90,
