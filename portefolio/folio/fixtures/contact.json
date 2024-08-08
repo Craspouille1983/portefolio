@@ -3,7 +3,7 @@
     "model": "folio.Contact",
     "fields": {
       "text": "mail",
-      "link": "mailto:frederic.sejournant@outlook.fr",
+      "link": "mailto:fredericsejournant7@gmail.com",
       "icon": "assets/logos/email-envelope.svg"
     }
   },

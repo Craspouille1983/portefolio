@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.core.mail import send_mail
 from folio import models
 from folio import forms
-
+from portefolio.settings import EMAIL_HOST
 
 def index(request):
     contacts = models.Contact.objects.all()
@@ -23,7 +23,7 @@ def index(request):
             subject = form.cleaned_data["subject"]
             message = form.cleaned_data["message"]
             sender = form.cleaned_data["email"]
-            recipient = "fredericsejournant7@gmail.com"
+            recipient = EMAIL_HOST
             send_mail(
                 subject,
                 message,
