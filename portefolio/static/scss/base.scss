@@ -118,8 +118,14 @@ body {
       display: flex;
       gap: .5em;
       margin: .5em 0;
+      flex-wrap: wrap;
+      justify-content: center;
       .skill {
         width: fit-content;
+        max-width: 140px;
+        @media screen and (min-width: 48em) {
+          max-width: unset;
+        }
         // padding: .5em;
   
         // background-color: #fff;

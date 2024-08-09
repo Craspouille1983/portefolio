@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 from dotenv import load_dotenv
 import os
-# from pathlib import Path
+from pathlib import Path
 load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -24,10 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG') == 'True'
+DEBUG = os.environ.get('DEBUG') == 'False'
 
-ALLOWED_HOSTS = ['portfolio-fs.codephenix.fr']
-
+# ALLOWED_HOSTS = ['portfolio-fs.codephenix.fr']
+ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
