@@ -43,6 +43,7 @@ body {
     top: calc(100vh / 2);
     right: 3vw;
     z-index: 10;
+
     nav {
       ul {
         list-style: none;
@@ -110,35 +111,39 @@ body {
   }
 
   .skills-container {
+
     // display: flex;
     // justify-content: space-around;
     // flex-wrap: wrap;
     // gap: 1em;
-    > div {
+    >div {
       display: flex;
       gap: .5em;
       margin: .5em 0;
       flex-wrap: wrap;
       justify-content: center;
+
       .skill {
         width: fit-content;
         max-width: 140px;
+
         @media screen and (min-width: 48em) {
           max-width: unset;
         }
+
         // padding: .5em;
-  
+
         // background-color: #fff;
         .skill-header {
           h2 {
             font-size: 1.25em;
           }
         }
-  
+
         .skill-bottom {
           figure {
             height: 150px;
-  
+
             img {
               height: 100%;
             }
@@ -161,17 +166,69 @@ body {
       .project-header {
         figure {
           height: 150px;
-
+          text-align: center;
           img {
             height: 100%;
+            width: fit-content;
           }
         }
       }
 
       .project-bottom {
-        p {
-          font-size: 1em;
+        span {
+          font-size: .9em;
+
+          &[data-name="HTML5"] {
+            color: #E34F26;
+          }
+
+          &[data-name="CSS"] {
+            color: #264de4;
+          }
+
+          &[data-name="Sass"] {
+            color: #CD6799;
+          }
+
+          &[data-name="JavaScript"] {
+            color: #f7df1e;
+          }
+
+          &[data-name="Python"] {
+            background: linear-gradient(to right, #5a9fd4 50%, #ffd43b 50%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          &[data-name="Django"] {
+            background: linear-gradient(to top, #092E20 25%, #fff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          &[data-name="Bootstrap"] {
+            color: #9013fe;
+          }
+
+          &[data-name="VueJS"] {
+            background: linear-gradient(to right, #41b883 25%, #34495e 75%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          &[data-name="ReactJS"] {
+            color: #61dafb;
+          }
+
+          &[data-name="jQuery"] {
+            color: #0868ac;
+          }
         }
+
+
       }
 
     }
@@ -218,6 +275,7 @@ body {
             border-bottom: 2px deeppink solid;
           }
         }
+
         button[type="submit"] {
           background-color: #c80141;
           color: #fffede;
@@ -227,6 +285,7 @@ body {
           margin-top: .5em;
           margin-right: 2em;
           align-self: flex-end;
+
           @media screen and (min-width: 992px) {
             margin-right: unset;
           }
@@ -234,9 +293,11 @@ body {
       }
 
     }
+
     figure {
       max-width: 35vw;
       margin: 0 auto;
+
       h2 {
         align-self: flex-end;
         padding-top: 1rem;
@@ -245,7 +306,7 @@ body {
         height: 150px;
         color: #111;
         margin-bottom: 2em;
-  
+
         &::before {
           content: "";
           width: 125%;
@@ -261,7 +322,7 @@ body {
           background-size: contain;
           // transform: rotateX(180deg);
           transform-origin: center;
-  
+
           @media screen and (min-width: 992px) {
             // margin: 0 auto;
             bottom: 0;

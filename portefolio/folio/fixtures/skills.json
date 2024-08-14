@@ -36,7 +36,7 @@
       "type": "language",
       "level": 95,
       "experience": 5,
-      "logo_skill": "assets/logos/JavaScript-logo.png"
+      "logo_skill": "assets/logos/Javascript.svg"
     }
   },
   {
@@ -66,7 +66,7 @@
       "type": "language",
       "level": 40,
       "experience": 1,
-      "logo_skill": "assets/logos/python-logo.png"
+      "logo_skill": "assets/logos/python.svg"
     }
   },
   {
