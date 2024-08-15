@@ -153,86 +153,145 @@ body {
     }
   }
 
-  .projects-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 1em;
+  #projects {
+    .filter-buttons {
+      display: flex;
+      column-gap: 1em;
+      justify-content: center;
+      margin: 1em 0;
+      button {
+        font-size: .9em;
+        padding: .25em;
+        border: none;
 
-    .project {
-      width: fit-content;
-      padding: .5em;
-
-      .project-header {
-        figure {
-          height: 150px;
-          text-align: center;
-          img {
-            height: 100%;
-            width: fit-content;
-          }
-        }
-      }
-
-      .project-bottom {
-        span {
-          font-size: .9em;
-
-          &[data-name="HTML5"] {
-            color: #E34F26;
-          }
-
-          &[data-name="CSS"] {
-            color: #264de4;
-          }
-
-          &[data-name="Sass"] {
-            color: #CD6799;
-          }
-
-          &[data-name="JavaScript"] {
-            color: #f7df1e;
-          }
-
-          &[data-name="Python"] {
-            background: linear-gradient(to right, #5a9fd4 50%, #ffd43b 50%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-          }
-
-          &[data-name="Django"] {
-            background: linear-gradient(to top, #092E20 25%, #fff);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-          }
-
-          &[data-name="Bootstrap"] {
-            color: #9013fe;
-          }
-
-          &[data-name="VueJS"] {
-            background: linear-gradient(to right, #41b883 25%, #34495e 75%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-          }
-
-          &[data-name="ReactJS"] {
-            color: #61dafb;
-          }
-
-          &[data-name="jQuery"] {
-            color: #0868ac;
-          }
+        &[data-skill-id="HTML5"] {
+          background: #E34F26;
         }
 
+        &[data-skill-id="CSS"] {
+          background: #264de4;
+        }
+
+        &[data-skill-id="Sass"] {
+          background: #CD6799;
+        }
+
+        &[data-skill-id="JavaScript"] {
+          background: #f7df1e;
+        }
+
+        &[data-skill-id="Python"] {
+          background: linear-gradient(to right, #5a9fd4 50%, #ffd43b 50%);
+        }
+
+        &[data-skill-id="Django"] {
+          background: linear-gradient(to top, #092E20 25%, #fff);
+        }
+
+        &[data-skill-id="Bootstrap"] {
+          background: #9013fe;
+        }
+
+        &[data-skill-id="VueJS"] {
+          background: linear-gradient(to right, #41b883 25%, #34495e 75%);
+        }
+
+        &[data-skill-id="ReactJS"] {
+          background: #61dafb;
+        }
+
+        &[data-skill-id="jQuery"] {
+          background: #0868ac;
+        }
+      }
+    }
+
+    .projects-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 1em;
+      transition: 1s linear;
+
+      .project {
+        width: fit-content;
+        padding: .5em;
+
+        &.filtrer {
+          display: none;
+        }
+
+        .project-header {
+          figure {
+            height: 150px;
+            text-align: center;
+
+            img {
+              height: 100%;
+              width: fit-content;
+            }
+          }
+        }
+
+        .project-bottom {
+          span {
+            font-size: .9em;
+
+            &[data-name="HTML5"] {
+              color: #E34F26;
+            }
+
+            &[data-name="CSS"] {
+              color: #264de4;
+            }
+
+            &[data-name="Sass"] {
+              color: #CD6799;
+            }
+
+            &[data-name="JavaScript"] {
+              color: #f7df1e;
+            }
+
+            &[data-name="Python"] {
+              background: linear-gradient(to right, #5a9fd4 50%, #ffd43b 50%);
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+
+            &[data-name="Django"] {
+              background: linear-gradient(to top, #092E20 25%, #fff);
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+
+            &[data-name="Bootstrap"] {
+              color: #9013fe;
+            }
+
+            &[data-name="VueJS"] {
+              background: linear-gradient(to right, #41b883 25%, #34495e 75%);
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+
+            &[data-name="ReactJS"] {
+              color: #61dafb;
+            }
+
+            &[data-name="jQuery"] {
+              color: #0868ac;
+            }
+          }
+        }
 
       }
-
     }
   }
+
 
   #contact {
     display: flex;

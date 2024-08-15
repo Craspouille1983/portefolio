@@ -83,7 +83,12 @@
     <hr />
     <section class="projects" id="projects">
       <h2>Quelques uns de mes projets</h2>
-      <div class="projects-container">
+        <div class="filter-buttons">
+          {% for skill_id in filtered_skills %}
+            <button class="filter-button" data-skill-id="{{ skill_id }}">{{ skill_id  }}</button>
+          {% endfor %}
+        </div>
+        <div class="projects-container">
         {% for projet  in projets %}
           <div class="project">
             <a href="{{ projet.link }}">
@@ -91,8 +96,8 @@
                 <figure><img src="{% static projet.logo %}" alt="logo {{ projet.project }}"></figure>
               </div>
             </a>
-            <div class="project-bottom">          
-                {% for skill in projet.skills_list %}
+            <div class="project-bottom {% for skill in projet.skills_list %} {{ skill|lower }}{% endfor %}">          
+              {% for skill in projet.skills_list %}
                 <span data-name="{{skill}}">{{ skill }} </span>
               {% endfor %}
                 

@@ -37,15 +37,16 @@
   <script>
     let menu = document.querySelectorAll("nav ul li a");
     let elements = document.querySelectorAll("section[id]");
+    const filterButtons = document.querySelectorAll(".filter-button");
+    const projects = document.querySelectorAll(".project .project-bottom");
     //console.log(elements)
     window.addEventListener("scroll", function () {
       elements.forEach((el) => {
         const rect = el.getBoundingClientRect();
         const viewport = window.innerHeight;
         if (window.scrollY === 0) {
-          menu[0].classList.add('current')
-        }
-        else if (rect.top - (viewport/2) < 0) {
+          menu[0].classList.add("current");
+        } else if (rect.top - viewport / 2 < 0) {
           menu.forEach((m) => {
             if (m.href.includes(`#${el.id}`)) {
               m.parentElement.classList.add("current");
@@ -53,6 +54,15 @@
               m.parentElement.classList.remove("current");
             }
           });
+        }
+      });
+    });
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", function() {
+        const skillId = this.dataset.skillId;
+        for (let i = 0; i < projects.length; i++) {
+          console.log(skillId, projects[i].classList.contains(skillId))
+          if (!projects[i].classList.contains(skillId.toLowerCase())) projects[i].closest('.project').classList.toggle('filtrer')
         }
       });
     });

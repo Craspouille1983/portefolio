@@ -4,6 +4,7 @@ from folio import models
 from folio import forms
 from portefolio.settings import EMAIL_HOST
 
+
 def index(request):
     contacts = models.Contact.objects.all()
     skills = models.Skill.objects.all()
@@ -12,7 +13,19 @@ def index(request):
     for skill in skills:
         skill.skill_id = SKILL_CHOICES[int(skill.skill)]
     for project in projects:
-        project.skills_list = [SKILL_CHOICES.get(skill.id) for skill in project.language.all()]
+        project.skills_list = [
+            SKILL_CHOICES.get(skill.id) for skill in project.language.all()
+        ]
+    skill_counts = {}
+    for project in projects:
+        for skill in project.language.all():
+            skill_id =  SKILL_CHOICES.get(skill.id)
+            skill_counts[skill_id] = skill_counts.get(skill_id, 0) + 1
+
+    # Filtrer les skills en fonction des occurrences
+    filtered_skills = [skill for skill, count in skill_counts.items()]
+
+
     form = forms.ContactForm()
     if request.method == "POST":
         form = forms.ContactForm(request.POST)
@@ -47,10 +60,10 @@ def index(request):
         "folio/index.html",
         context={
             "skills": skills,
+            "filtered_skills": filtered_skills,
             "contacts": contacts,
             "projets": projects,
             "SKILL_CHOICES": SKILL_CHOICES,
             "form": form,
         },
     )
-
