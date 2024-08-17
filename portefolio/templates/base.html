@@ -37,8 +37,7 @@
   <script>
     let menu = document.querySelectorAll("nav ul li a");
     let elements = document.querySelectorAll("section[id]");
-    const filterButtons = document.querySelectorAll(".filter-button");
-    const projects = document.querySelectorAll(".project .project-bottom");
+
     //console.log(elements)
     window.addEventListener("scroll", function () {
       elements.forEach((el) => {
@@ -57,14 +56,6 @@
         }
       });
     });
-    filterButtons.forEach((button) => {
-      button.addEventListener("click", function() {
-        const skillId = this.dataset.skillId;
-        for (let i = 0; i < projects.length; i++) {
-          console.log(skillId, projects[i].classList.contains(skillId))
-          if (!projects[i].classList.contains(skillId.toLowerCase())) projects[i].closest('.project').classList.toggle('filtrer')
-        }
-      });
-    });
   </script>
+  <script src='{% static "includes/js/index.js" %}'></script>
 </html>
