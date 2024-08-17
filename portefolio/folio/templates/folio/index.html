@@ -85,7 +85,7 @@
       <h2>Quelques uns de mes projets</h2>
         <div class="filter-buttons">
           {% for skill_id in filtered_skills %}
-            <button class="filter-button" data-skill-id="{{ skill_id }}">{{ skill_id  }}</button>
+            <button class="filter-button" data-filter="{{ skill_id }}">{{ skill_id  }}</button>
           {% endfor %}
         </div>
         <div class="projects-container">

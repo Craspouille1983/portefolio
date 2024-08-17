@@ -163,44 +163,45 @@ body {
         font-size: .9em;
         padding: .25em;
         border: none;
+        cursor: pointer;
 
-        &[data-skill-id="HTML5"] {
+        &[data-filter="HTML5"] {
           background: #E34F26;
         }
 
-        &[data-skill-id="CSS"] {
+        &[data-filter="CSS"] {
           background: #264de4;
         }
 
-        &[data-skill-id="Sass"] {
+        &[data-filter="Sass"] {
           background: #CD6799;
         }
 
-        &[data-skill-id="JavaScript"] {
+        &[data-filter="JavaScript"] {
           background: #f7df1e;
         }
 
-        &[data-skill-id="Python"] {
+        &[data-filter="Python"] {
           background: linear-gradient(to right, #5a9fd4 50%, #ffd43b 50%);
         }
 
-        &[data-skill-id="Django"] {
+        &[data-filter="Django"] {
           background: linear-gradient(to top, #092E20 25%, #fff);
         }
 
-        &[data-skill-id="Bootstrap"] {
+        &[data-filter="Bootstrap"] {
           background: #9013fe;
         }
 
-        &[data-skill-id="VueJS"] {
+        &[data-filter="VueJS"] {
           background: linear-gradient(to right, #41b883 25%, #34495e 75%);
         }
 
-        &[data-skill-id="ReactJS"] {
+        &[data-filter="ReactJS"] {
           background: #61dafb;
         }
 
-        &[data-skill-id="jQuery"] {
+        &[data-filter="jQuery"] {
           background: #0868ac;
         }
       }
@@ -215,9 +216,16 @@ body {
 
       .project {
         width: fit-content;
+        height: auto;
         padding: .5em;
-
-        &.filtrer {
+        overflow: hidden;
+        transition: var(--i) linear;
+        &.is-filtering {
+          width: 0;
+          height: 0;
+          // transition: width var(--i) linear;
+        }
+        &.filter {
           display: none;
         }
 
@@ -228,7 +236,8 @@ body {
 
             img {
               height: 100%;
-              width: fit-content;
+              width: 100%;
+              object-fit: contain;
             }
           }
         }
