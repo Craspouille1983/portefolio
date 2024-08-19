@@ -212,19 +212,15 @@ body {
       justify-content: space-around;
       flex-wrap: wrap;
       gap: 1em;
-      transition: 1s linear;
+      transition: .5s linear;
 
       .project {
-        width: fit-content;
-        height: auto;
+        width: 340px;
+        height: 190px;
         padding: .5em;
         overflow: hidden;
         transition: var(--i) linear;
-        &.is-filtering {
-          width: 0;
-          height: 0;
-          // transition: width var(--i) linear;
-        }
+        
         &.filter {
           display: none;
         }

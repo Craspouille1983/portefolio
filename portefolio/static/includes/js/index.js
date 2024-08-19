@@ -1,27 +1,51 @@
-const filterButtons = document.querySelectorAll('.filter-button');
-const projects = document.querySelectorAll('.project .project-bottom');
+const lists = document.querySelectorAll(".filter-button");
+const items = document.querySelectorAll(".project .project-bottom");
+let sizeX = "340";
+let sizeY = "190";
 
-filterButtons[0].classList.add('active');
-for (let i = 0; i < projects.length; i++) {
-	projects[i].closest('.project').setAttribute('style', `--i: ${i / projects.length}s`)
-}
-function filterProjects(filterValue) {
-  projects.forEach(project => {
-    project.closest('.project').classList.add('is-filtering'); 
-    setTimeout(_ => {
-      project.closest('.project').classList.remove('is-filtering');
-      // project.closest('.project').classList.toggle('filter', !project.classList.contains(filterValue));
-    }, 500);
-    setTimeout(_ => {
-      project.closest('.project').classList.toggle('filter', !project.classList.contains(filterValue));
-    }, 600);
-  });
+for (let i = 0; i < items.length; i++) {
+  items[i]
+    .closest(".project")
+    .setAttribute("style", `--i: ${i / items.length}s`);
 }
 
-filterButtons.forEach(button => {
-  button.addEventListener('click', function() {
-    const filterValue = this.dataset.filter.toLowerCase();
-    filterButtons.forEach(button => button.classList.toggle('active', button === this));
-    filterProjects(filterValue);
+lists.forEach((list) => {
+  list.addEventListener("click", function () {
+    let value = this.dataset.filter.toLowerCase();
+    if (!this.classList.contains("active")) {
+      items.forEach((item) => {
+        for (let i = 0; i < lists.length; i++) {
+          lists[i].classList.remove("active");
+        }
+        if (item.classList.contains(`${value}`)) {
+          setTimeout((_) => {
+            item.closest(".project").classList.remove("filter");
+          }, 600);
+          setTimeout((_) => {
+            item.closest(".project").style.width = `${sizeX}px`;
+            item.closest(".project").style.height = `${sizeY}px`;
+          }, 800);
+        }
+        if (!item.classList.contains(`${value}`)) {
+          setTimeout((_) => {
+            item.closest(".project").style.width = "0";
+            item.closest(".project").style.height = "0";
+          }, 600);
+          setTimeout((_) => {
+            item.closest(".project").classList.add("filter");
+          }, 800);
+        }
+      });
+      this.classList.add("active");
+    } else {
+      items.forEach((item) => {
+        this.classList.remove("active");
+        setTimeout((_) => {
+          item.closest(".project").style.width = `${sizeX}px`;
+          item.closest(".project").style.height = `${sizeY}px`;
+        }, 600);
+        item.closest(".project").classList.remove("filter");
+      });
+    }
   });
 });

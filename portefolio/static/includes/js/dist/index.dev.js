@@ -1,33 +1,57 @@
 "use strict";
 
-var filterButtons = document.querySelectorAll('.filter-button');
-var projects = document.querySelectorAll('.project .project-bottom');
-filterButtons[0].classList.add('active');
+var lists = document.querySelectorAll(".filter-button");
+var items = document.querySelectorAll(".project .project-bottom");
+var sizeX = "340";
+var sizeY = "190";
 
-for (var i = 0; i < projects.length; i++) {
-  projects[i].closest('.project').setAttribute('style', "--i: ".concat(i / projects.length, "s"));
+for (var i = 0; i < items.length; i++) {
+  items[i].closest(".project").setAttribute("style", "--i: ".concat(i / items.length, "s"));
 }
 
-function filterProjects(filterValue) {
-  projects.forEach(function (project) {
-    project.closest('.project').classList.add('is-filtering');
-    setTimeout(function (_) {
-      project.closest('.project').classList.remove('is-filtering'); // project.closest('.project').classList.toggle('filter', !project.classList.contains(filterValue));
-    }, 500);
-    setTimeout(function (_) {
-      project.closest('.project').classList.toggle('filter', !project.classList.contains(filterValue));
-    }, 600);
-  });
-}
-
-filterButtons.forEach(function (button) {
-  button.addEventListener('click', function () {
+lists.forEach(function (list) {
+  list.addEventListener("click", function () {
     var _this = this;
 
-    var filterValue = this.dataset.filter.toLowerCase();
-    filterButtons.forEach(function (button) {
-      return button.classList.toggle('active', button === _this);
-    });
-    filterProjects(filterValue);
+    var value = this.dataset.filter.toLowerCase();
+
+    if (!this.classList.contains("active")) {
+      items.forEach(function (item) {
+        for (var _i = 0; _i < lists.length; _i++) {
+          lists[_i].classList.remove("active");
+        }
+
+        if (item.classList.contains("".concat(value))) {
+          setTimeout(function (_) {
+            item.closest(".project").classList.remove("filter");
+          }, 600);
+          setTimeout(function (_) {
+            item.closest(".project").style.width = "".concat(sizeX, "px");
+            item.closest(".project").style.height = "".concat(sizeY, "px");
+          }, 800);
+        }
+
+        if (!item.classList.contains("".concat(value))) {
+          setTimeout(function (_) {
+            item.closest(".project").style.width = "0";
+            item.closest(".project").style.height = "0";
+          }, 600);
+          setTimeout(function (_) {
+            item.closest(".project").classList.add("filter");
+          }, 800);
+        }
+      });
+      this.classList.add("active");
+    } else {
+      items.forEach(function (item) {
+        _this.classList.remove("active");
+
+        setTimeout(function (_) {
+          item.closest(".project").style.width = "".concat(sizeX, "px");
+          item.closest(".project").style.height = "".concat(sizeY, "px");
+        }, 600);
+        item.closest(".project").classList.remove("filter");
+      });
+    }
   });
 });
