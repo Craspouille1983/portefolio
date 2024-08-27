@@ -1,6 +1,6 @@
 "use strict";
 
-var lists = document.querySelectorAll(".filter-button");
+var lists = document.querySelectorAll(".filter-button, span[data-filter]");
 var items = document.querySelectorAll(".project .project-bottom");
 var sizeX = "340";
 var sizeY = "190";

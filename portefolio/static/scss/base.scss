@@ -156,7 +156,8 @@ body {
   #projects {
     .filter-buttons {
       display: flex;
-      column-gap: 1em;
+      gap: 1em;
+      flex-wrap:  wrap;
       justify-content: center;
       margin: 1em 0;
       button {
@@ -241,7 +242,7 @@ body {
         .project-bottom {
           span {
             font-size: .9em;
-
+            cursor: pointer;
             &[data-name="HTML5"] {
               color: #E34F26;
             }

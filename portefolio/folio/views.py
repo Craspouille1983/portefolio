@@ -30,6 +30,7 @@ def index(request):
     if request.method == "POST":
         form = forms.ContactForm(request.POST)
         if form.is_valid():
+            print(f"Validated form data: {form.cleaned_data}")
             # Enregistrement en base de données (optionnel)
             form.save()
             # Envoi d'un email
@@ -37,6 +38,7 @@ def index(request):
             message = form.cleaned_data["message"]
             sender = form.cleaned_data["email"]
             recipient = EMAIL_HOST
+            print(f"Sending email: Subject: {subject}, Message: {message}, Sender: {sender}, Recipient: {recipient}")
             send_mail(
                 subject,
                 message,
@@ -53,6 +55,7 @@ def index(request):
                 },
             )
     else:
+        print(f"Form errors: {form.errors}")
         form = forms.ContactForm()
 
     return render(

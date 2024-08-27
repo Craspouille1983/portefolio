@@ -1,4 +1,4 @@
-const lists = document.querySelectorAll(".filter-button");
+const lists = document.querySelectorAll(".filter-button, span[data-filter]");
 const items = document.querySelectorAll(".project .project-bottom");
 let sizeX = "340";
 let sizeY = "190";
