@@ -2,7 +2,7 @@
 
 var lists = document.querySelectorAll(".filter-button, span[data-filter]");
 var items = document.querySelectorAll(".project .project-bottom");
-var sizeX = "340";
+var sizeX = "380";
 var sizeY = "190";
 
 for (var i = 0; i < items.length; i++) {
