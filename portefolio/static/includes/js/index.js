@@ -1,6 +1,6 @@
 const lists = document.querySelectorAll(".filter-button, span[data-filter]");
 const items = document.querySelectorAll(".project .project-bottom");
-let sizeX = "340";
+let sizeX = "380";
 let sizeY = "190";
 
 for (let i = 0; i < items.length; i++) {
