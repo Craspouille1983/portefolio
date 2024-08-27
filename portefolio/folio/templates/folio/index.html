@@ -98,7 +98,7 @@
             </a>
             <div class="project-bottom {% for skill in projet.skills_list %} {{ skill|lower }}{% endfor %}">          
               {% for skill in projet.skills_list %}
-                <span data-name="{{skill}}">{{ skill }} </span>
+                <span data-name="{{skill}}" data-filter="{{ skill }}">{{ skill }} </span>
               {% endfor %}
                 
             </div>
