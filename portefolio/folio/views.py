@@ -31,7 +31,7 @@ def index(request):
         form = forms.ContactForm(request.POST)
         if form.is_valid():
             # Enregistrement en base de données (optionnel)
-            form.save()
+            # form.save()
             # Envoi d'un email
             subject = form.cleaned_data["subject"]
             message = form.cleaned_data["message"]
@@ -48,6 +48,11 @@ def index(request):
                 request,
                 "folio/index.html",
                 context={
+                    "skills": skills,
+                    "filtered_skills": filtered_skills,
+                    "contacts": contacts,
+                    "projets": projects,
+                    "SKILL_CHOICES": SKILL_CHOICES,
                     "form": form,
                     "success_message": "Votre message a bien été envoyé.",
                 },
