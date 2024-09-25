@@ -14,7 +14,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{% static 'css/base.min.css'%}"
+      href="{% static 'includes/css/base.min.css'%}"
     />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,8 +37,9 @@
   <script>
     let menu = document.querySelectorAll("nav ul li a");
     let elements = document.querySelectorAll("section[id]");
-
-    //console.log(elements)
+    window.onload = _ => {
+      elements[0].classList.add('viewed');
+    }
     window.addEventListener("scroll", function () {
       elements.forEach((el) => {
         const rect = el.getBoundingClientRect();
@@ -49,6 +50,7 @@
           menu.forEach((m) => {
             if (m.href.includes(`#${el.id}`)) {
               m.parentElement.classList.add("current");
+              el.classList.add('viewed');
             } else {
               m.parentElement.classList.remove("current");
             }
