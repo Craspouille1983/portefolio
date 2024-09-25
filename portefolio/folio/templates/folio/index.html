@@ -39,7 +39,7 @@
     <section class="skills" id="skills">
       <h2>Compétences</h2>
       <div class="skills-container">
-        <div data-type="language">
+        <div data-type="language" style="--direction: top; --translate: -150%">
           {% for skill in skills %}
             {% if skill.type == 'language' %} 
               <div class="skill">
@@ -58,8 +58,8 @@
             {% endif%}
           {% endfor %}
         </div>
-        <hr style="max-width: 50vw; margin: 3em auto;" />
-        <div data-type="logiciel">
+        <hr style="max-width: 50vw; margin: 3em auto; --direction: left; --translate: -150%"/>
+        <div data-type="logiciel" style="--direction: bottom; --translate: 150%">
           {% for skill in skills %}
             {% if skill.type == 'logiciel' %} 
               <div class="skill">
@@ -80,7 +80,7 @@
         </div>
       </div>
     </section>
-    <hr />
+    <hr/>
     <section class="projects" id="projects">
       <h2>Quelques uns de mes projets</h2>
         <div class="filter-buttons">
@@ -107,11 +107,23 @@
       </div>        
     </section>
     <hr />
-    <section id="contact">
+    <section id="contact" style="--direction: top" class="contact">
       <div>
         <form method="post">
           {% csrf_token %}
-          {{ form.as_p }}
+          {% comment %} {{ form.as_p }} {% endcomment %}
+          <p>{{ form.name.label_tag }}
+          {{ form.name }}
+          </p>
+          <p>{{ form.email.label_tag }}
+          {{ form.email }}
+          </p>
+          <p>{{ form.subject.label_tag }}
+          {{ form.subject }}
+          </p>
+          <p>{{ form.message.label_tag }}
+          {{ form.message }}
+          </p>
           <button type="submit">Envoyer</button>
         </form>
         {% if success_message %}
