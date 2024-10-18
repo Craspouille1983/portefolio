@@ -57,7 +57,7 @@
     "model": "folio.Project",
     "fields": {
       "project": "VictorIa",
-      "link": "https://www.atigip-justice.fr/",
+      "link": "https://victoria.codephenix.fr/",
       "language": [1, 3, 11],
       "logo": "assets/logos_projets/victoria.svg"
     }

@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Frédéric Séjournant - Développeur web front-end - Découvrez mon portfolio" />
     <!-- favicon-->
     <link
       rel="icon"
@@ -27,37 +28,12 @@
       href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet"
     />
-    <title>Frédéric</title>
+    <title>Frédéric Séjournant</title>
   </head>
   <body>
     {% block content %}{% endblock content %}
 
     <!-- Contenu de la page -->
   </body>
-  <script>
-    let menu = document.querySelectorAll("nav ul li a");
-    let elements = document.querySelectorAll("section[id]");
-    window.onload = _ => {
-      elements[0].classList.add('viewed');
-    }
-    window.addEventListener("scroll", function () {
-      elements.forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        const viewport = window.innerHeight;
-        if (window.scrollY === 0) {
-          menu[0].classList.add("current");
-        } else if (rect.top - viewport / 2 < 0) {
-          menu.forEach((m) => {
-            if (m.href.includes(`#${el.id}`)) {
-              m.parentElement.classList.add("current");
-              el.classList.add('viewed');
-            } else {
-              m.parentElement.classList.remove("current");
-            }
-          });
-        }
-      });
-    });
-  </script>
   <script src='{% static "includes/js/index.js" %}'></script>
 </html>

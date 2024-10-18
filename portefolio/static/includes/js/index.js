@@ -1,7 +1,31 @@
 const lists = document.querySelectorAll(".filter-button, span[data-filter]");
 const items = document.querySelectorAll(".project .project-bottom");
+let menu = document.querySelectorAll("nav ul li a");
+let elements = document.querySelectorAll("section[id]");
+window.onload = _ => {
+  elements[0].classList.add('viewed');
+}
 let sizeX = "380";
 let sizeY = "190";
+
+window.addEventListener("scroll", function () {
+  elements.forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    const viewport = window.innerHeight;
+    if (window.scrollY === 0) {
+      menu[0].classList.add("current");
+    } else if (rect.top - viewport / 2 < 0) {
+      menu.forEach((m) => {
+        if (m.href.includes(`#${el.id}`)) {
+          m.parentElement.classList.add("current");
+          el.classList.add('viewed');
+        } else {
+          m.parentElement.classList.remove("current");
+        }
+      });
+    }
+  });
+});
 
 for (let i = 0; i < items.length; i++) {
   items[i]
