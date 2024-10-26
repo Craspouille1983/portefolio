@@ -119,13 +119,14 @@ body {
     }
 
     &.skills {
+      max-height: fit-content;
       &.viewed {
         div[data-type] {
           transform: translateY(0);
         }
 
         hr {
-          transform: translateX(0);
+          transform: scaleX(100%);
         }
 
       }
@@ -152,7 +153,7 @@ body {
       hr {
         transition: 1s;
         transform-origin: var(--direction);
-        transform: translateX(var(--translate));
+        transform: scaleX(0);
       }
     }
 
