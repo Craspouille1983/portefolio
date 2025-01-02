@@ -1,9 +1,8 @@
 from django.shortcuts import render
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from folio import models
 from folio import forms
-from portefolio.settings import EMAIL_HOST
-
+from portefolio.settings import EMAIL_HOST_USER
 
 def index(request):
     contacts = models.Contact.objects.all()
@@ -19,31 +18,33 @@ def index(request):
     skill_counts = {}
     for project in projects:
         for skill in project.language.all():
-            skill_id =  SKILL_CHOICES.get(skill.id)
+            skill_id = SKILL_CHOICES.get(skill.id)
             skill_counts[skill_id] = skill_counts.get(skill_id, 0) + 1
 
     # Filtrer les skills en fonction des occurrences
     filtered_skills = [skill for skill, count in skill_counts.items()]
 
-
     form = forms.ContactForm()
     if request.method == "POST":
         form = forms.ContactForm(request.POST)
         if form.is_valid():
-            # Enregistrement en base de données (optionnel)
-            # form.save()
-            # Envoi d'un email
+            # Récupérer les données du formulaire
             subject = form.cleaned_data["subject"]
             message = form.cleaned_data["message"]
             sender = form.cleaned_data["email"]
-            recipient = EMAIL_HOST
-            send_mail(
-                subject,
-                message,
-                sender,
-                [recipient],
-                fail_silently=False,
+
+            # Configurer l'email avec un Reply-To
+            email = EmailMessage(
+                subject=subject,
+                body=message,
+                from_email=EMAIL_HOST_USER,  # Expéditeur (nécessaire pour SMTP)
+                to=[EMAIL_HOST_USER],  # Destinataire
+                reply_to=[sender],  # Permet de répondre à l'adresse de l'expéditeur
             )
+
+            # Envoi de l'email
+            email.send(fail_silently=False)
+
             return render(
                 request,
                 "folio/index.html",
